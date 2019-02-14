@@ -1,4 +1,4 @@
-# TecWeb
+# Tecnologie Web
 
 Progetto di Tecnologie Web, A.A. 2018/2019, del corso di Informatica dell'Università di Padova.
 
