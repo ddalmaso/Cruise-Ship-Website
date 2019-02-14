@@ -1,0 +1,74 @@
+/* CSS per tablet a basse risoluzioni e smartphone con orientamento orizzontale (landscape) */
+
+/* Rimuovo l'immagine dal menu */
+#img_logo {
+   display: none;
+}
+
+/* Fix Banner */
+
+#fixBanner {
+   padding-top: 6em;
+   padding-bottom: 0em;
+}
+
+/* Form modifica eventi */
+
+#edit-form {
+   width: 100%;
+   padding: 0;
+   box-shadow: none;
+}
+
+/* Metto in riga le colonne della pagina recensioni */
+.column {
+   width: 100%;
+}
+
+/* Rimuovo l'ombra dal form */
+.left {
+   box-shadow: none;
+}
+
+.row, #container_form {
+   padding-top: 1em;
+}
+
+/* Faccio cadere le icone del #footer sotto il testo */
+#footer {
+   padding: 1em;
+}
+
+#footer p {
+   font-size: 0.9em;
+   float: none;
+   padding-bottom: 1em;
+}
+
+#footer div {
+   text-align: center;
+}
+
+/* Aggiusto le immagini della pagina home */
+
+.div_img {
+   width: 100%;
+   padding: 0;
+}
+
+.modal-content {
+   width: 100%;
+}
+
+#filter_bar div {
+   float: left;
+   margin-right: 2em;
+}
+
+/* Aggiusto i pulsanti della pagina modifica/crea eventi */
+
+.tasti_form input,
+.tasti_form button {
+  padding: 1em;
+  margin: 0em 0.1em 0em 0.1em;
+}

@@ -1,0 +1,112 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* Utilizzo un font adatto alla lettura su carta */
+
+html, body {
+    font-family: Georgia, 'Times New Roman', serif;
+    text-align: center;
+}
+
+/* Elimino tutti gli elementi interattivi */
+
+#header, #footer, #small_header,
+#breadcrumb,#resize, #ship-facts .icon,
+#myModal, #backtoTop, #filter_bar,
+.event_cards button, #warning, .left,
+#login, #logout, #edit-form .tasti_form {
+   display: none;
+}
+
+/* Imposto i margini tra gli elementi */
+
+#title, #subtitle {
+   margin: 0.5em;
+}
+
+#ship-facts .item {
+   display: inline-block;
+   margin: 0.5em;
+}
+
+.div_img {
+   margin: 2em;
+}
+
+#events, #centerDiv {
+   text-align: center;
+}
+
+.event_cards {
+   display: inline-block;
+   margin: 2em 1em 0 0;
+}
+
+.event_cards img {
+   width: 20em;
+}
+
+#corpo_main {
+   margin-bottom: 1em;
+}
+
+div.ristorante {
+   display: inline-block;
+   margin-bottom: 2em;
+}
+
+div.ristorante img {
+   max-height: 15em;
+   max-width: 15em;
+   object-fit: contain;
+}
+
+p.nome_ristorante {
+   font-weight: bold;
+}
+
+#centerTable {
+   margin-top: 2em;
+   text-align: center;
+}
+
+#centerTable table {
+   border: 1px solid black;
+   display: inline-block;
+   margin: 0 0.5em 0.5em 0;
+}
+
+table th, td {
+   border: 1px solid black;
+}
+
+.box-review {
+   border: 1px solid black;
+   margin-top: 2em;
+}
+
+.box-review h1, .box-review p {
+   margin: 0 0.5em 0.5em 0.5em;
+}
+
+/* Aggiusto la dimensione del testo */
+
+.title-review {
+   font-size: 1.5em;
+}
+
+#container_form h2 {
+   font-size: 1em;
+}
+
+#edit-form div {
+   margin-top: 1em;
+}
+
+#edit-form input, textarea {
+   font-family: inherit;
+   border: none;
+   font-size: 18px;
+}

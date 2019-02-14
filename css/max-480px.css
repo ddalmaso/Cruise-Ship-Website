@@ -1,0 +1,218 @@
+/* CSS per smartphone, con orientamento verticale (portrait) */
+
+body {
+   margin:0;
+   padding:0;
+}
+
+#img_logo {
+   display: none;
+}
+
+#header {
+   padding: 0;
+}
+
+/* Fix Banner */
+
+#fixBanner {
+   padding-top: 3em;
+   padding-bottom: 0em;
+}
+
+/* Breadcrumb */
+
+#breadcrumb {
+   float: none;
+}
+
+/* Rimuovo lo strumento di resize del testo a mobile */
+
+#resize {
+   display: none;
+}
+
+/* Menu responsive ad hamburger */
+
+#nav {
+   padding-top: 0em;
+   background: #f6f5f6;
+   color: #2F6284;
+   font-size: 1.2em;
+   text-align: left;
+}
+
+#menu-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#menu-content {
+    max-height: 2.75em;
+    overflow: hidden;
+}
+
+#menu-label {
+  float: right;
+  margin-top: 0.2em;
+  width: 2.5em;
+  height: 2.5em;
+  display: block;
+  color: transparent;
+  cursor: pointer;
+  background: url(../img/menu.png) no-repeat center;
+  background-size: cover;
+}
+
+/* Toggle Effect */
+input:checked ~ #menu-content {
+    max-height: 100%;
+}
+
+#menu-content li {
+   padding-left: 1em;
+   font-weight: 400;
+}
+
+#menu-content li:not(:first-child) {
+   display: none;
+   font-weight: 300;
+   display: block;
+   text-align: left;
+   border: none;
+   color: #F6F5F6;
+   background-color: #434343;
+}
+
+#menu-content li:hover:not(:first-child) {
+   font-weight: 400;
+   background-color: #F6F5F6;
+   color: #434343;
+}
+
+#menu-content li:hover, .current_page {
+   border-bottom: none;
+}
+
+
+/* Riposiziono il banner sotto al menu */
+
+#small_header {
+   height: 150px;
+   padding-top: 1em;
+}
+
+#small_header h1 {
+   display: none;
+}
+
+/* Ship facts */
+
+#ship-facts {
+   text-align: center;
+   overflow:auto;
+   padding-bottom: 4em;
+}
+
+#ship-facts .item:first-child {
+   border: none;
+}
+
+#ship-facts .item {
+   width: 30%;
+}
+
+#ship-facts .icon {
+   width: 50%;
+}
+
+.ship-number {
+   font-size: 1.5em;
+}
+
+.ship-caption {
+   font-size: 0.8em;
+}
+
+/* Gallery della pagina home */
+
+.div_img {
+   width: 100%;
+   padding: 0;
+}
+
+.modal-content {
+   width: 100%;
+}
+
+/* Pagina dei Ristoranti */
+
+div.ristorante {
+   width: 100%;
+}
+
+div.ristorante button {
+   margin: 4px 0;
+   width: 97%;
+}
+
+/* Forms di login e recensioni */
+
+.row, #container_form {
+   padding-top: 1em;
+}
+
+#login {
+   width: 100%;
+}
+
+#contact {
+   width: 100%;
+}
+
+.left {
+   box-shadow: none;
+}
+
+/* corpo modifa/aggiungi eventi */
+
+.tasti_form input {
+  padding: 1em;
+  margin: 0em 0.1em 0em 0.1em;
+}
+
+/* corpo Account */
+
+.prenotazione {
+   padding-left: 0em;
+   padding-right: 0em;
+}
+
+.dataP {
+   padding-right: 0.3em;
+}
+
+.dataOggi {
+   padding-left: 0em;
+   padding-right: 0.3em;
+}
+
+.prenotazione input {
+   margin-left: 0.3em;
+}
+
+/* corpo Footer */
+
+#footer {
+   padding: 1em;
+}
+
+#footer p {
+   font-size: 0.9em;
+   float: none;
+   padding-bottom: 1em;
+}
+
+#footer div {
+   text-align: center;
+}

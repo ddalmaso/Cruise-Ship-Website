@@ -1,0 +1,893 @@
+@import url("http://fonts.googleapis.com/css?family=Lato:300,400,700");
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+* { /* elimino le impostazioni predefinite dei browser */
+   margin: 0;
+   padding: 0;
+   font-size: 1.0em;
+}
+
+body {
+   font-family: 'Lato', sans-serif;
+   font-weight: 300;
+   font-size: 110%;
+   color: #333333;
+   max-width: 1024px;
+   margin: auto;
+   background: #4c7398 url(../img/bg.jpg) no-repeat center top;
+   background-size: 100% auto;
+   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+#header, #main, #footer {
+   display: block;
+   background-color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#scrollBtn {
+  display: none;
+  position: fixed;
+  bottom: 1.5em;
+  right: 1.5em;
+  z-index: 99;
+  border: none;
+  background-color: #8C253D;
+  color: white;
+  cursor: pointer;
+  padding: 0.8em;
+  border-radius: 5px;
+}
+
+#scrollBtn:hover {
+  background-color: #555;
+}
+
+/* link salta a contenuto */
+
+.visuallyhidden {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+#skipNav:focus {
+position:absolute;
+left: 0px;
+top: 0px;
+width:auto;
+height:auto;
+padding: 0.2em;
+background-color: #f6f5f6;
+border-style: hidden;
+border-radius: 3px;
+z-index: 99;
+}
+
+/* Logo e menu di navigazione */
+
+#header {
+   position: fixed;
+   width: 100%;
+   padding: 1em 0;
+   max-width: 1024px;
+   transition: 0.4s;
+   z-index: 3;
+}
+
+#img_logo {
+   float: left;
+   padding-left: 1em;
+   width: 8em;
+   transition: 0.4s; /* crea un effetto di transizione quando l'immagine cambia di dimensione*/
+}
+
+#nav {
+   text-align: center;
+   padding-top: 1em;
+}
+
+#nav ul li {
+   display: inline-block;
+   padding: 0.8em 2% 0.8em 2%;
+}
+
+#nav a {
+   color: inherit;
+   text-decoration: none;
+}
+
+#nav a:hover {
+  text-decoration: none;
+}
+
+#nav li:hover, .current_page {
+   border-bottom: 3px solid #2F6284;
+   background-color: #f6f5f6;
+   color: #2F6284;
+}
+
+#nav .current_page {
+   font-weight: 400;
+}
+
+#menu-toggle, #menu-label {
+  display: none;
+}
+
+#main {
+   padding: 1em;
+   overflow: hidden;
+}
+
+/* Layout a 2 colonne per la pagina Recensioni */
+
+.column {
+  float: left;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.left {
+   width: 50%;
+   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.left-bar {
+   width: 30%;
+}
+
+.right {
+  width: 50%;
+}
+
+.right-event {
+   width: 70%;
+}
+
+/* clearfix hack */
+
+.row:after {
+   content: "";
+   clear: both;
+   display: table;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* corpo pagina modifica/crea eventi */
+
+#edit-form {
+   width: 40em;
+   margin: 0 auto;
+   border-radius: 5px;
+   padding: 1em;
+   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.tasti_form {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tasti_form input{
+  margin: 0em 0.3em 0em 0.3em;
+  padding: 1em 2.5em 1em 2.5em;
+  width: auto;
+}
+
+.tasti_form button{
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 1.5em;
+  background-color: #28d;
+  border: none;
+  border-radius: 3px;
+  color: #f4f4f4;
+  cursor: pointer;
+  padding: 0.7em;
+  -webkit-appearance: none;
+}
+
+.tasti_form button[name=cancella] {
+  background-color: #E91B0C;
+}
+
+.tasti_form button[name=cancella]:hover {
+  background-color: #da190b;
+}
+
+.tasti_form button[disabled] {
+  color: #6d6d6d;
+  background-color: #e9e9e9;
+}
+.tasti_form button[disabled]:hover {
+   background-color: #e9e9e9;
+}
+
+/* Forms login e recensioni */
+
+#container_form > h2 {
+   text-align: center;
+   font-weight: 400;
+   padding: 1em;
+}
+
+.left > p {
+   text-align: center;
+   font-weight: 400;
+   padding: 1em 0;
+}
+
+#login {
+   padding-top: 1em;
+   width: 25em;
+   margin: 0 auto;
+}
+
+#contact {
+   margin: 0 auto;
+}
+
+
+input, textarea, .rating {
+   margin-top: 0.4em;
+   margin-bottom: 0.7em;
+}
+
+.rating legend {
+   margin-bottom: 0.4em;
+}
+
+input[type=text], input[type=password], input[type="number"] {
+   width: 100%;
+   box-sizing: border-box;
+   background-color: #f2f2f2;
+	border: none;
+	border-radius: 3px;
+	color: #5a5656;
+   font-weight: inherit;
+   height: 2.5em;
+	padding: 0px 0.7em;
+}
+
+input[name=ore],input[name=minuti]{
+  max-width: 4em;
+}
+
+textarea {
+   width: 100%;
+   box-sizing: border-box;
+   background-color: #f2f2f2;
+	border: none;
+	border-radius: 3px;
+	color: #5a5656;
+   font-weight: inherit;
+	padding: 0.7em;
+}
+
+input[type=submit] {
+   width: 100%;
+   box-sizing: border-box;
+   margin-top: 1.5em;
+	background-color: #1E76BE;
+	border: none;
+	border-radius: 3px;
+	color: #fff;
+	cursor: pointer;
+	padding: 0.7em;
+   -webkit-appearance: none;
+}
+
+input[type=submit]:hover {
+   background-color: #1A68A8;
+}
+
+input[name=annulla], input[name=cancella]  {
+  background-color: #E91B0C;
+}
+
+input[name=annulla]:hover, input[name=cancella]:hover {
+  background-color: #da190b;
+}
+
+input[disabled=disabled] {
+  color: #6d6d6d;
+  background-color: #e9e9e9;
+}
+input[disabled=disabled]:hover {
+   background-color: #e9e9e9;
+}
+
+#elimina_btn{
+  width: auto;
+  float: left;
+}
+
+.error, .asterisk {
+   color: red;
+}
+
+h1.error {
+  font-size: 2em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+}
+
+#error_message {
+  margin-top: 1em;
+  margin-bottom: 3em;
+  text-align: center;
+}
+
+/* Punteggio a stelle */
+
+.rating, .fixedRating {
+  border: none;
+}
+
+.iconaStella::before {
+  margin: 0.2em;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  content: "\f005";
+}
+
+.rating > label {
+   color: #FFD700;
+   float: left;
+   cursor: pointer;
+}
+
+/* CSS per evidenziare le stelle */
+
+.rating > input:checked ~ label
+{ color: #ddd;  } /* evidenzia le stelle precedenti alla stella selezionata */
+
+.rating > input:checked + label /* evidenzia la stella selezionata */
+{
+     color: #FFD700;
+}
+
+.fixedRating > span {
+   color: #FFD700;
+}
+
+/* Box delle recensioni */
+
+#lastReview {
+   text-align: center;
+   font-size: 1.3em;
+   border-top: 3px dotted;
+   border-bottom: 3px dotted;
+   color: #7E202D;
+   border-color: #333333;
+   padding: 0.5em;
+   margin-bottom: 1em;
+}
+
+.box-review {
+   margin-bottom: 1em;
+   padding: 1em;
+   background-color: #FDF5E6;
+   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
+}
+
+.title-review, .data-review, .descr-review, .author-review {
+   padding-top: 0.5em;
+}
+
+.author-review {
+   text-align: right;
+}
+
+/* Banner */
+
+#small_header {
+   position: relative;
+   height: 18em;
+   width: 100%;
+   padding-top: 6em;
+   z-index: 2;
+   overflow: hidden;
+}
+
+#small_header h1 {
+    font-size: 2.5em;
+    font-weight: 400;
+    color: white;
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.7), 2px 4px 10px #000;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+}
+
+#img_header {
+    border: 1px solid black;
+    position: absolute;
+    opacity: 0.9;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 100%;
+}
+
+/* Fix banner */
+
+#fixBanner {
+   padding-top: 7em;
+   padding-bottom: 1em;
+}
+
+/* Corpo della pagina Home */
+
+#title, #subtitle {
+   text-align: center;
+   font-size: 2em;
+}
+
+#title{
+     color: #073D5E;
+}
+
+#subtitle {
+   font-size: 1.8em;
+   font-weight: 300;
+   padding-bottom: 0.5em;
+}
+
+#corpo_main {
+   text-align: center;
+   padding: 1em 0 1em 0;
+}
+
+#ship-facts {
+   text-align: center;
+   overflow: auto;
+   padding-bottom: 4em;
+}
+
+#ship-facts .item:first-child {
+   border: none;
+}
+
+#ship-facts .item {
+   border-left: 1px solid #BBBBBB;
+   display: inline-block;
+}
+
+#ship-facts .icon {
+   width: 28%;
+   padding-bottom: 0.5em;
+}
+
+.ship-number {
+   font-size: 2em;
+   font-weight: 400;
+   color: #073D5E;
+   padding-bottom: 0.5em;
+}
+
+.ship-caption {
+   font-weight: 400;
+}
+
+/* Galleria di immagini */
+
+.div_img {
+   display: inline-block;
+   padding: 0.5em;
+   width: 45%;
+}
+
+.div_img img {
+   width: 100%;
+   height: auto;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: 0.3s;
+   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.div_img img:hover {
+   opacity: 0.7;
+}
+
+/* Box modale (background)*/
+.modal {
+   display: none;
+   position: fixed;
+   z-index: 99;
+   padding-top: 6em;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgb(0,0,0);
+   background-color: rgba(0,0,0,0.9);
+}
+
+/* Immagine all'interno del box modale */
+.modal-content {
+   margin: auto;
+   display: block;
+   width: 80%;
+   max-width: 50em;
+}
+
+/* Didascalia dell'immagine dentro il box - Stessa larghezza (width) dell'immagine */
+#caption {
+   margin: auto;
+   display: block;
+   width: 80%;
+   max-width: 50em;
+   text-align: center;
+   color: #ccc;
+   padding: 0.5em 0;
+}
+
+/* Pulsante per la chiusura del box modale */
+.close {
+   position: absolute;
+   top: 0.6em;
+   right: 1em;
+   color: #f1f1f1;
+   font-size: 2.2em;
+   font-weight: bold;
+   transition: 0.3s;
+   border: none;
+   background-color: Transparent;
+}
+
+.close:hover, .close:focus {
+   color: #bbb;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+/* Breadcrumb */
+
+#breadcrumb {
+   float: left;
+   padding-bottom: 1em;
+}
+
+/* Strumento per ridimensionare i caratteri */
+
+#resize {
+   visibility: hidden;
+   text-align: right;
+}
+
+#resize div {
+   display: inline;
+}
+
+#resize a {
+   font-weight: 300;
+   color: #053D5D;
+   background-color: #eee;
+   padding: 0.1em 0.2em 0.1em 0.2em;
+   border: 1px solid #bbb;
+   border-radius: 7px;
+
+}
+
+/* Corpo della pagina ristoranti */
+
+p.content_title{
+   text-align: center;
+   font-size: 1.5em;
+   padding-bottom: 1em;
+}
+
+#warning {
+  text-align: center;
+  padding-bottom: 1em;
+  font-weight: bold;
+}
+
+#centerDiv {
+   text-align: center;
+}
+
+div.ristorante {
+   margin: 0 0.6em 0.6em 0;
+   border: 1px solid #ccc;
+   display: inline-block;
+   width: 16em;
+   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+div.ristorante img {
+   width: 100%;
+   height: auto;
+}
+
+div.ristorante p{
+   padding: 2px;
+   text-align: center;
+}
+div.ristorante p.nome_ristorante{
+   font-weight: bold;
+}
+
+div.ristorante button{
+  background-color: #4c7398;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  margin: 0.2em;
+  width: 15.5em;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+/* corpo della pagina Itinerario */
+
+#info-route {
+   text-align: center;
+   padding: 1em 0;
+}
+
+#centerTable {
+   margin-top: 2em;
+   text-align: center;
+}
+
+table {
+  display:inline-block;
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px #ddd solid;
+  padding: 10px;
+}
+
+/* Fondo le varie tabelle in una tabella unica, avente un sola colonna di celle intestazione */
+@media all and (min-width: 480px) {
+   table  {
+      display:inline-block;
+   }
+
+   table ~ table td,
+   table ~ table th  { border-left: 0;  }
+
+   table ~ table tr:first-child  th:first-child,
+   table ~ table tr:not(:first-child) th
+   {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+  }
+}
+
+/* corpo della pagina Eventi */
+
+.event_cards {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin: 0 1em 1em 0;
+  width: 15em;
+  transition: 0.3s;
+  display: inline-block;
+  text-align: center;
+}
+
+.event_cards h2,
+.event_cards p,
+.event_cards button {
+   margin-top: 0.4em;
+}
+
+.event_cards img {
+   border-radius: 5px 5px 0 0;
+   width: 100%;
+}
+
+.event_cards button {
+  color: white;
+  background-color: #333333;
+  border-radius: 5px;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.event_cards button:hover,
+#filter_bar input[type=submit]:hover,
+.new_btn:hover {
+  opacity: 0.7;
+}
+
+button.edit_btn{
+  width: 2.1em;
+  height: 2.1em;
+  background-image: url("../img/edit2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.new_btn {
+  background-color: #333333;
+  -webkit-appearance: none;
+}
+
+.event_cards form{
+  display: inline-block;
+}
+
+#events{
+  text-align: center;
+}
+
+#filter_bar {
+   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+   border-radius: 5px;
+   background-color: #f6f5f6;
+   padding: 0.5em;
+}
+
+
+#filter_bar input[type=submit], .new_btn {
+  padding: 0.5em;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+}
+
+#filter_bar input[type=submit] {
+    background-color: #1E76BE;
+}
+
+#filter_bar input[disabled=disabled],.new_btn[disabled] {
+  color: #6d6d6d;
+  background-color: #e9e9e9;
+}
+#filter_bar input[disabled=disabled]:hover,.new_btn[disabled]:hover {
+   background-color: #e9e9e9;
+}
+
+#filter_bar label {
+   display: block;
+}
+
+#filter_bar select{
+   font-weight: 300;
+}
+
+#filter_bar div:first-child {
+   margin-bottom: 1em;
+}
+
+#filter_bar p, #filter_bar label:first-child {
+   font-weight: 400;
+   margin-bottom: 0.5em;
+}
+
+
+/* corpo pagina account */
+
+.prenotazioni {
+  display: table;
+  margin: auto;
+}
+
+.prenotazione {
+    margin: auto;
+    text-align: center;
+    border-top: 1px solid #2F6284;
+    border-bottom: 1px solid #2F6284;
+    padding: 1em;
+}
+
+.prenotazione p{
+    display:inline-block;
+}
+
+.prenotazione form{
+    display:inline-block;
+}
+.prenotazione input{
+  margin: auto;
+  width: auto;
+  height: auto;
+  padding: 0.3em;
+  margin-left: 1em;
+}
+
+.dataOggi {
+  color: #073D5E;
+  padding-right: 2em;
+  padding-left: 2em;
+}
+
+.dataP {
+    color: #073D5E;
+    float: left;
+    padding-right: 1em;
+}
+
+/* Piè di pagina */
+
+#footer {
+   border-top: 1px solid #d8d8d8;
+   background-color: #f1f1f1;
+   padding: 1em 2em;
+   text-align: center;
+}
+
+#footer p {
+   padding-top: 0.5em;
+   float: left;
+}
+
+#footer div {
+   text-align: right;
+}
+
+#footer .social {
+   cursor: pointer;
+   padding-left: 1%;
+   width: 2.5em;
+}
+
+#footer .social:hover {
+   opacity: 0.5;
+   filter: alpha(opacity=50); /* Per IE8 e precedenti */
+}
+
+/* Pagina focused_event */
+
+.container-event {
+   position: relative;
+   width: 31em;
+   max-width: 100%;
+   display: block;
+   margin: 0.5em auto 1.6em auto;
+}
+
+.text-block {
+   position: absolute;
+   bottom: 1em;
+   right: 1em;
+   background-color: rgba(0, 0, 0, 0.70);
+   color: white;
+   padding: 0.5em 1em;
+}
+
+.text-block h4 {
+   padding-bottom: 0.3em;
+}
+
+#img_event {
+   width: 100%;
+   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+   border-radius: 5px;
+}
